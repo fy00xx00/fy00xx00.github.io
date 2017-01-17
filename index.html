@@ -1,16 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>test</title>
-  <style>
-    #balloonG{
-      border:1px solid #e6e6e6;
-    }
-  </style>
-</head>
+<!DOCTYLE html>
+<html>
+<head></head>
+<style>
+  *{margin:0;padding:0;}
+  canvas{border:1px solid #eee; background-color: #e06700;}
+</style>
 <body>
-<canvas id="balloonG"></canvas>
-<script src="./lib/balloon.js"></script>
+<canvas id="canvas" width="500" height="300"></canvas>
+<button onclick ="create()">创建</button>
+<button onclick ="join()">加入</button>
+<script>
+  canvas = document.getElementById('canvas');
+  //canvas.width = window.innerWidth;
+  //canvas.height = window.innerHeight;
+</script>
+<script src='../dist/wzq.js'></script>
+<script>
+  var w  = new wzq(canvas,document);
+  function create(){
+    w.createRoom();
+  }
+
+  function join(){
+    w.joinRoom();
+  }
+</script>
 </body>
 </html>
